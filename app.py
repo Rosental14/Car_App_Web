@@ -4,12 +4,12 @@ import streamlit as st
 
 car_data = pd.read_csv('vehicles_us.csv')  # lendo os dados
 
-st.header('My First App Web', divider='rainbow')
+st.header(":sunglasses: Renan's First App Web :car:", divider='rainbow')
 
-# criar um botão para gerar um histograma
-hist_button = st.button('Criar histograma')
+# criar uma caixa de seleção para gerar um histograma
+build_hist = st.checkbox('Criar histograma')
 
-if hist_button:  # se o botão for clicado
+if build_hist:  # se a caixa de seleção for selecionada
     # escrever uma mensagem
     st.write(
         'Criando um histograma para o conjunto de dados de anúncios de vendas de carros')
@@ -20,10 +20,10 @@ if hist_button:  # se o botão for clicado
     # exibir um gráfico Plotly interativo
     st.plotly_chart(fig_hist, use_container_width=True)
 
-# criar um botão para gerar um gráfico de dispersão
-scatter_button = st.button('Criar gráfico de dispersão')
+# criar uma caixa de seleção para gerar um gráfico de dispersão
+build_scatter = st.checkbox('Criar gráfico de dispersão')
 
-if scatter_button:  # se o botão for clicado
+if build_scatter:  # se a caixa de seleção for selecionada
     # escrever uma mensagem
     st.write(
         'Criando um gráfico de dispersão para o conjunto de dados de anúncios de vendas de carros')
