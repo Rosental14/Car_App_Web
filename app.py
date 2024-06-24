@@ -16,7 +16,7 @@ st.title('Análise de Veículos')
 modelo = st.multiselect('Escolha o(s) modelos(s)', options=data['model'].unique(), default=data['model'].unique())
 
 # Filtro de intervalo para o ano do veículo
-ano_min, ano_max = st.slider('Escolha o intervalo de anos', int(data['year'].min()), int(data['year'].max()), (int(data['year'].min()), int(data['year'].max())))
+ano_min, ano_max = st.slider('Escolha o intervalo de anos', int(data['model_year'].min()), int(data['model_year'].max()), (int(data['model_year'].min()), int(data['model_year'].max())))
 
 # Filtro de faixa de preço
 preco_min, preco_max = st.slider('Escolha o intervalo de preços', int(data['price'].min()), int(data['price'].max()), (int(data['price'].min()), int(data['price'].max())))
@@ -24,7 +24,7 @@ preco_min, preco_max = st.slider('Escolha o intervalo de preços', int(data['pri
 # Aplicando os filtros aos dados
 data_filtrada = data[
     (data['model'].isin(marcas)) &
-    (data['model_year'] >= ano_min) & (data['year'] <= ano_max) &
+    (data['model_year'] >= ano_min) & (data['model_year'] <= ano_max) &
     (data['price'] >= preco_min) & (data['price'] <= preco_max)
 ]
 
